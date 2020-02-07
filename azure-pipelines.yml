@@ -1,4 +1,16 @@
 # Starter pipeline
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'MAIC - TEK Experts CR - v-josual(1)(eb3660b9-20cf-4b36-a8dc-7fa6a04aeb1a)'
+    appType: 'webApp'
+    WebAppName: 'TestJosue'
+    deployToSlotOrASE: true
+    ResourceGroupName: 'testjosue'
+    SlotName: 'production'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    enableCustomDeployment: true
+    DeploymentType: 'runFromZip'
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
